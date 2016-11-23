@@ -29,6 +29,17 @@ a {
     width: 71.25rem;
   }
 }
+
+.jumbotron {
+  min-height: 13.75rem;
+  background: #d8e9ef;
+  padding: 1.25rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
