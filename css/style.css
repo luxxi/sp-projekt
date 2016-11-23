@@ -674,6 +674,17 @@ a {
   }
 }
 
+.footer {
+  margin-top: 2.5rem;
+  height: 7.5rem;
+  padding: 1.25rem;
+  background: #454552;
+}
+
+.footer * {
+  color: #fff;
+}
+
 .description {
   display: -webkit-box;
   display: -ms-flexbox;
