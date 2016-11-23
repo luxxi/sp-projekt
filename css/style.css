@@ -811,3 +811,11 @@ a {
   font-size: 1.25rem;
 }
 
+html,
+body {
+  min-height: 100%;
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 16.875rem);
+}
