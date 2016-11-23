@@ -80,3 +80,47 @@
   width: 3.125rem;
   height: 3.125rem;
 }
+
+.header__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 65%;
+      flex-basis: 65%;
+}
+
+@media screen and (max-width: 40rem) {
+  .header__items {
+    display: none;
+    box-shadow: 0 0.0625rem 0.125rem rgba(69, 69, 82, 0.5);
+  }
+}
+
+.header__item {
+  font-size: 1.25rem;
+}
+
+.header__item a {
+  color: #454552 !important;
+  text-decoration: none;
+}
+
+.header__item a.btn {
+  color: #fff !important;
+}
+
+@media screen and (max-width: 40rem) {
+  .header__item {
+    padding: 0.5rem 1.25rem;
+    width: calc(100vw - 2.5rem);
+  }
+  .header__item:last-child {
+    padding-bottom: 1rem;
+  }
+}
