@@ -11,6 +11,17 @@
   height: 4.375rem;
 }
 
+.header .nav-trigger {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  display: none;
+}
+
+@media screen and (max-width: 40rem) {
+  .header .nav-trigger {
+    display: block;
+  }
+}
 
 @media screen and (max-width: 40rem) {
   .header {
@@ -22,6 +33,29 @@
         -ms-flex-align: start;
             align-items: flex-start;
   }
+}
+
+.header label[for="nav-trigger"] {
+  position: absolute;
+  right: 0.9375rem;
+  top: 0.9375rem;
+  z-index: 2;
+  height: 1.875rem;
+  width: 1.875rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect style='fill:#454552' width='30' height='6'/><rect style='fill:#454552' y='24' width='30' height='6'/><rect style='fill:#454552' y='12' width='30' height='6'/></svg>");
+  background-size: contain;
+  display: none;
+}
+
+@media screen and (max-width: 40rem) {
+  .header label[for="nav-trigger"] {
+    display: block;
+  }
+}
+
+.header .nav-trigger:checked + .header__items {
+  display: block;
 }
 
 .header__logo {
