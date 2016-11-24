@@ -1,0 +1,28 @@
+{
+  "name": "sp",
+  "version": "1.0.0",
+  "description": "Pametna spletna aplikacija za vodenje seznama opravil.",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start": "forever start server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luxxi/sp-projekt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luxxi/sp-projekt/issues"
+  },
+  "homepage": "https://github.com/luxxi/sp-projekt#readme",
+  "dependencies": {
+    "forever": "^0.15.3",
+    "ws": "^1.1.1"
+  }
+}

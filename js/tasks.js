@@ -56,6 +56,54 @@
 
   var resetTags = filterTags.bind(null, 'none');
 
+  function toggleRowCheckbox(nameEl) {
+    var rowCheckbox = nameEl.parentNode.querySelector('input[type="checkbox"]');
+    rowCheckbox.checked = !rowCheckbox.checked;
+    return rowCheckbox;
+  }
+
+  function initWS() {
+    if (!window.WebSocket) {
+      alert('WebSocket is not supported.');
+      return;
+    }
+
+    var ws, reconnectInterval, send = {};
+    function connect() {
+      // listen on websocket at current url at port 9998
+      ws = new WebSocket('ws://' + window.location.hostname + ':9998');
+
+      // when socket server connects, clear reconnection interval
+      ws.onopen = function () {
+        reconnectInterval = clearInterval(reconnectInterval);
+      };
+
+      // when socket server closes, try to reconnect each second
+      ws.onclose = function() {
+        if (!reconnectInterval) {
+          reconnectInterval = setInterval(connect, 1000);
+        }
+      };
+
+      // when message is received, parse it as nameIndex and toggle corresponding checkbox
+      ws.onmessage = function(e) {
+        var nameIndex = parseInt(e.data);
+        var nameEl = document.querySelectorAll('.tasks__name')[nameIndex];
+        if (nameEl) {
+          toggleRowCheckbox(nameEl);
+        }
+      };
+
+      // function which sends nameIndex to socket server when called
+      send.all = function (nameIndex) {
+        ws.send(nameIndex);
+      };
+    }
+    connect();
+
+    return send;
+  }
+
   function run() {
     // register click event on all tags
     document.querySelectorAll('.tag').forEach(function (tag) {
@@ -72,11 +120,16 @@
     resetTags();
     filterTags(window.location.hash);
 
+    var wsSend = initWS();
+
     // register click event on each task name and toggle checkbox state on click
-    document.querySelectorAll('.tasks__name').forEach(function (task) {
+    document.querySelectorAll('.tasks__name,.tasks__checkbox').forEach(function (task) {
       task.addEventListener('click', function (e) {
-        var rowCheckbox = e.target.parentNode.querySelector('input[type="checkbox"]');
-        rowCheckbox.checked = !rowCheckbox.checked;
+        var checkboxEl = e.target.matches('.tasks__name') ? toggleRowCheckbox(e.target) : e.target;
+        if (wsSend) {
+          var nameIndex = Array.prototype.indexOf.call(document.querySelectorAll('.tasks__checkbox'), checkboxEl);
+          wsSend.all(nameIndex);
+        }
       });
     });
   }
