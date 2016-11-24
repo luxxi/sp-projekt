@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+    <title>smartTODO - new</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header container">
+      <div class="header__logo">
+        <img class="header__logo__image" src="images/logo.png" alt="logo"/>
+        <h2 class="header__logo__name">
+          Smart<span class="red">TODO</span>
+        </h2>
+      </div>
+
+      <label for="nav-trigger"></label>
+      <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+
+      <div class="header__items">
+        <div class="header__item">
+          <a href="tasks.html">Tasks</a>
+        </div>
+        <div class="header__item">
+          <a href="graphs.html">Graphs</a>
+        </div>
+        <div class="header__item">
+          <a class="btn rounded shadowed-text red-bg" href="index.html">Log out</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+      <div class="content container">
+        <form action="tasks.html" method="get">
+          <div class="form-group">
+            <div>
+              <label for="task">Task</label>
+            </div>
+            <div>
+              <input type="text" id="task" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="priority">Priority</label>
+            </div>
+            <div>
+              <input type="range" id="priority" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="difficulty">Difficulty</label>
+            </div>
+            <div>
+              <input type="range" id="difficulty" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="tags">Tags</label>
+            </div>
+            <div>
+              <input type="text" id="tags" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="due">Due</label>
+            </div>
+            <div>
+              <input type="date" id="due" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="description">Description</label>
+            </div>
+            <div>
+              <textarea rows="4" cols="20" id="description">
+              </textarea>
+            </div>
+          </div>
+          <div class="actions">
+            <input type="submit" class="btn rounded shadowed-text red-bg" value="Create">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="address">
+          <p>
+            <strong>SmartTODO inc.</strong>
+          </p>
+          <p>
+            1600 Pennsylvania Ave NW,<br>
+            Washington, DC 20500, United States
+          </p>
+          <p>
+            <a href="mailto:info@smarttodo.com">info@smarttodo.com</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
