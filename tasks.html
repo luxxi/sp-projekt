@@ -37,42 +37,58 @@
       <div class="content container">
         <div class="tags">
           <ul>
-            <li><a href="#" class="tag tag__active">All</a></li>
-            <li><a href="#" class="tag">Work</a></li>
-            <li><a href="#" class="tag">School</a></li>
+            <li><a href="#all" class="tags__tag tag tag__active">All</a></li>
+            <li><a href="#work" class="tags__tag tag">Work</a></li>
+            <li><a href="#school" class="tags__tag tag">School</a></li>
           </ul>
         </div>
         <div class="tasks">
           <table>
             <tr>
-              <th class="hide"></th>
-              <th class="hide">task</th>
-              <th class="hide">priority/difficulty</th>
-              <th class="hide">tags</th>
-              <th class="hide">due</th>
-              <th class="hide"></th>
+              <th></th>
+              <th>task</th>
+              <th>priority</th>
+              <th>tags</th>
+              <th>due</th>
+              <th></th>
             </tr>
             <tr>
-              <td><i class="fa fa-check-square-o"></i></td>
-              <td>task1</td>
+              <td>
+                <input class="tasks__checkbox" type="checkbox" id="checkbox1">
+                <label for="checkbox1"></label>
+              </td>
+              <td class="tasks__name">task1</td>
               <td><i class="fa fa-exclamation"></i></td>
-              <td class="hide"><a href="#" class="tag">Work</a> <a href="#" class="tag">School</a></td>
+              <td class="hide">
+                <a href="#work" class="tag">Work</a>
+                <a href="#school" class="tag">School</a>
+              </td>
               <td><i class="fa fa-clock-o"></i> 25 May</td>
               <td><a href="new.html"><i class="fa fa-pencil"></i></a></td>
             </tr>
             <tr>
-              <td><i class="fa fa-check-square-o"></i></td>
-              <td>task2</td>
+              <td>
+                <input class="tasks__checkbox" type="checkbox" id="checkbox2">
+                <label for="checkbox2"></label>
+              </td>
+              <td class="tasks__name">task2</td>
               <td><i class="fa fa-exclamation"></i></td>
-              <td class="hide"></td>
+              <td class="hide">
+                <a href="#work" class="tag">Work</a>
+              </td>
               <td><i class="fa fa-clock-o"></i> 12 Jul</td>
               <td><a href="new.html"><i class="fa fa-pencil"></i></a></td>
             </tr>
             <tr>
-              <td><i class="fa fa-square-o"></i></td>
-              <td>task3</td>
+              <td>
+                <input class="tasks__checkbox" type="checkbox" id="checkbox3">
+                <label for="checkbox3"></label>
+              </td>
+              <td class="tasks__name">task3</td>
               <td></td>
-              <td class="hide"></td>
+              <td class="hide">
+                <a href="#school" class="tag">School</a>
+              </td>
               <td><i class="fa fa-clock-o"></i> 20 Feb</td>
               <td><a href="new.html"><i class="fa fa-pencil"></i></a></td>
             </tr>
@@ -100,5 +116,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="js/tasks.js" charset="utf-8"></script>
   </body>
 </html>
