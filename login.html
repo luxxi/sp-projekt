@@ -23,25 +23,41 @@
 
     <div class="header__items">
       <div class="header__item">
-        <a href="#">Features</a>
+        <a href="about.html">About</a>
       </div>
       <div class="header__item">
-        <a href="#">Pricing</a>
+        <a href="login.html">Login</a>
       </div>
       <div class="header__item">
-        <a href="#">About</a>
-      </div>
-      <div class="header__item">
-        <a href="#">Login</a>
-      </div>
-      <div class="header__item">
-        <a class="btn rounded shadowed-text red-bg" href="#">Sign Up</a>
+        <a class="btn rounded shadowed-text red-bg" href="signup.html">Sign Up</a>
       </div>
     </div>
   </header>
 
   <div class="content-wrapper">
-
+    <div class="content container">
+      <form action="tasks.html" method="get">
+        <div class="form-group">
+          <div>
+            <label for="email">Email</label>
+          </div>
+          <div>
+            <input type="text" class="form-control" id="email"  pattern="[A-Za-z0-9]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,24}$" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label for="password">Password</label>
+          </div>
+          <div>
+            <input type="password" class="form-control" id="password" required />
+          </div>
+        </div>
+        <div class="actions">
+          <input type="submit" class="btn rounded shadowed-text red-bg" value="Login">
+        </div>
+      </form>
+    </div>
   </div>
 
   <footer class="footer">
