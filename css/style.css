@@ -713,8 +713,8 @@ a {
 }
 
 .header__logo {
-  -ms-flex-preferred-size: 35%;
-      flex-basis: 35%;
+  -ms-flex-preferred-size: 69%;
+      flex-basis: 69%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -745,8 +745,8 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-preferred-size: 65%;
-      flex-basis: 65%;
+  -ms-flex-preferred-size: 31%;
+      flex-basis: 31%;
 }
 
 @media screen and (max-width: 40rem) {
@@ -780,7 +780,7 @@ a {
 }
 
 .footer {
-  margin-top: 2.5rem;
+  margin-top: 0rem;
   height: 7.5rem;
   padding: 1.25rem;
   background: #454552;
@@ -952,4 +952,8 @@ body {
 
 .video {
   margin-top: 1.875rem;
+}
+
+.clear {
+  height: 1.875rem;
 }
