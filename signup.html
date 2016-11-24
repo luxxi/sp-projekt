@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+  <title>smartTODO - signup</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header container">
+    <div class="header__logo">
+      <img class="header__logo__image" src="images/logo.png" alt="logo" />
+      <h2 class="header__logo__name">
+        Smart<span class="red">TODO</span>
+      </h2>
+    </div>
+
+    <label for="nav-trigger"></label>
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+    <div class="header__items">
+      <div class="header__item">
+        <a href="about.html">About</a>
+      </div>
+      <div class="header__item">
+        <a href="login.html">Login</a>
+      </div>
+      <div class="header__item">
+        <a class="btn rounded shadowed-text red-bg" href="signup.html">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="content-wrapper">
+    <div class="content container">
+      <form action="tasks.html" method="get">
+        <div class="form-group">
+          <div>
+            <label for="name">Name</label>
+          </div>
+          <div>
+            <input type="text" id="name" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label for="email">Email</label>
+          </div>
+          <div>
+            <input type="text" id="email" pattern="[A-Za-z0-9]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,24}$" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label for="password">Password</label>
+          </div>
+          <div>
+            <input type="password" id="password" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label for="password-confirmation">Password Confirmation</label>
+          </div>
+          <div>
+            <input type="password" id="password-confirmation" required />
+          </div>
+        </div>
+        <div class="actions">
+          <input type="submit" class="btn rounded shadowed-text red-bg" value="Sign Up">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="address">
+        <p>
+          <strong>SmartTODO inc.</strong>
+        </p>
+        <p>
+          1600 Pennsylvania Ave NW,<br>
+          Washington, DC 20500, United States
+        </p>
+        <p>
+          <a href="mailto:info@smarttodo.com">info@smarttodo.com</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
