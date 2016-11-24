@@ -1,0 +1,28 @@
+.btn {
+  padding: 0.5rem 0.75rem;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn.rounded {
+  border-radius: 0.25rem;
+}
+
+.btn.shadowed-text {
+  text-shadow: 0 0 0.01562rem #454552;
+}
+
+.btn.large {
+  width: 12.125rem;
+  padding: 1rem;
+}
+
+.jumbotron {
+  min-height: 13.75rem;
+  background: #d8e9ef;
+  padding: 1.25rem 0;
+}
+
+.text-center {
+  text-align: center;
+}

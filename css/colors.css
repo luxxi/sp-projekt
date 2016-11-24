@@ -1,0 +1,47 @@
+* {
+  color: #454552;
+}
+
+a {
+  color: #4ea1d3;
+}
+
+.red {
+  color: #e85a71;
+}
+
+.light-blue {
+  color: #d8e9ef;
+}
+
+.blue {
+  color: #4ea1d3;
+}
+
+.gray {
+  color: #454552;
+}
+
+.white {
+  color: #fff;
+}
+
+.red-bg {
+  background: #e85a71;
+}
+
+.light-blue-bg {
+  background: #d8e9ef;
+}
+
+.blue-bg {
+  background: #4ea1d3;
+}
+
+.gray-bg {
+  background: #454552;
+}
+
+.white-bg {
+  color: #fff;
+}

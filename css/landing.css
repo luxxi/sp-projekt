@@ -1,0 +1,125 @@
+.description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.description p {
+  padding-top: 1.25rem;
+  max-width: 37.5rem;
+}
+
+.features {
+  margin-top: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.features__item {
+  padding: 0 1.25rem;
+  -ms-flex-preferred-size: calc(33% - 2.5rem);
+      flex-basis: calc(33% - 2.5rem);
+}
+
+@media screen and (max-width: 544px) {
+  .features__item {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.comparison {
+  margin-top: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.comparison__item {
+  -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
+  padding: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(78, 161, 211, 0.9);
+}
+
+.comparison__item * {
+  color: #fff;
+}
+
+@media screen and (max-width: 544px) {
+  .comparison__item {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-top: 1rem;
+  }
+}
+
+.comparison__features {
+  padding: 0.625rem;
+  margin-left: -1.25rem;
+}
+
+.comparison__features ul {
+  list-style: none;
+}
+
+.comparison__features li {
+  padding: 0.3125rem 0;
+}
+
+.comparison__features li:before {
+  font-family: 'FontAwesome';
+  content: '\f00c';
+  margin: 0 5px 0 -15px;
+  color: #e6e6e6;
+}
+
+.comparison__cost {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.cta {
+  margin-top: 3.75rem;
+}
+
+.cta .btn {
+  font-size: 1.25rem;
+}
