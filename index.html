@@ -1,62 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
-  <title>smartTODO</title>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+    <title>smartTODO</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header container">
+      <div class="header__logo">
+        <img class="header__logo__image" src="images/logo.png" alt="logo"/>
+        <h2 class="header__logo__name">
+          Smart<span class="red">TODO</span>
+        </h2>
+      </div>
 
-<body>
-  <header class="header container">
-    <div class="header__logo">
-      <img class="header__logo__image" src="images/logo.png" alt="logo" />
-      <h2 class="header__logo__name">
-        Smart<span class="red">TODO</span>
-      </h2>
-    </div>
+      <label for="nav-trigger"></label>
+      <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
 
-    <label for="nav-trigger"></label>
-    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <div class="header__items">
+        <div class="header__item">
+          <a href="about.html">About</a>
+        </div>
+        <div class="header__item">
+          <a href="login.html">Login</a>
+        </div>
+        <div class="header__item">
+          <a class="btn rounded shadowed-text red-bg" href="signup.html">Sign Up</a>
+        </div>
+      </div>
+    </header>
 
-    <div class="header__items">
-      <div class="header__item">
-        <a href="#">Features</a>
+    <div class="content-wrapper">
+      <div class="jumbotron">
+        <div class="container description text-center">
+          <h2>Manage your life with SmartTODO list</h2>
+          <p>
+            SmartTODO is the easiest and the smartest way to get stuff done.
+  Whether you’re planning a holiday, sharing a shopping list with a partner or managing multiple work projects, SmartTODO is here to help you tick off all your personal and professional to-dos.
+          </p>
+        </div>
       </div>
-      <div class="header__item">
-        <a href="#">Pricing</a>
-      </div>
-      <div class="header__item">
-        <a href="#">About</a>
-      </div>
-      <div class="header__item">
-        <a href="#">Login</a>
-      </div>
-      <div class="header__item">
-        <a class="btn rounded shadowed-text red-bg" href="#">Sign Up</a>
-      </div>
-    </div>
-  </header>
 
-  <div class="content-wrapper">
-    <section class="jumbotron">
-      <div class="container description text-center">
-        <h2>Manage your life with SmartTODO list</h2>
-        <p>
-          SmartTODO is the easiest and the smartest way to get stuff done. Whether you’re planning a holiday, sharing a shopping list with a partner or managing multiple work projects, SmartTODO is here to help you tick off all your personal and professional to-dos.
-        </p>
-      </div>
-    </section>
-
-    <section class="container features">
-      <div class="features__item text-center">
-        <p><i class="fa fa-2x fa-list"></i></p>
-        <p>
-          Create to-dos with difficulty/priority and let the SmartTODO keep pushing you to reach your goals in no time.
-        </p>
-      </div>
+      <div class="container features">
+        <div class="features__item text-center">
+          <p><i class="fa fa-2x fa-list"></i></p>
+          <p>
+            Create to-dos with difficulty/priority and let the SmartTODO keep pushing you to reach your goals in no time.
+          </p>
+        </div>
         <div class="features__item text-center">
           <p><i class="fa fa-2x fa-bullhorn"></i></p>
           <p>
@@ -69,59 +63,60 @@
             Tag your to-dos and organize it whatever you like. Track your progress by tags and daily activity.
           </p>
         </div>
-    </section>
+      </div>
 
-    <section class="container comparison">
-      <div class="comparison__item">
-        <h3 class="">Free</h3>
-        <div class="comparison__features">
-          <ul>
-            <li>Smart to-dos</li>
-            <li>Reminders</li>
-          </ul>
-        </div>
+      <div class="container comparison">
+        <div class="comparison__item">
+          <h3 class="">Free</h3>
+          <div class="comparison__features">
+            <ul>
+              <li>Smart to-dos</li>
+              <li>Reminders</li>
+            </ul>
+          </div>
           <div class="comparison__cost ">
             $0 / month
           </div>
-      </div>
-      <div class="comparison__item">
-        <h3 class="">PRO</h3>
-        <div class="comparison__features">
-          <ul>
-            <li>Smart to-dos</li>
-            <li>Reminders</li>
-            <li>Track progress</li>
-          </ul>
         </div>
-        <div class="comparison__cost ">
-          $10 / month
+        <div class="comparison__item">
+          <h3 class="">PRO</h3>
+          <div class="comparison__features">
+            <ul>
+              <li>Smart to-dos</li>
+              <li>Reminders</li>
+              <li>Track progress</li>
+            </ul>
+          </div>
+          <div class="comparison__cost ">
+            $10 / month
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="container cta text-center">
-      <p>
-        <a class="btn large rounded white shadowed-text red-bg" href="#">Sign Up</a>
-      </p>
-      <small>30 days trial</small>
-    </section>
-  </div>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="address">
+      <div class="container cta text-center">
         <p>
-          <strong>SmartTODO inc.</strong>
+          <a class="btn large rounded white shadowed-text red-bg" href="signup.html">Sign Up</a>
         </p>
-        <p>
-          1600 Pennsylvania Ave NW,<br>
-          Washington, DC 20500, United States
-        </p>
-        <p>
-          <a href="mailto:info@smarttodo.com">info@smarttodo.com</a>
-        </p>
+        <small>30 days trial</small>
       </div>
+      <div class="clear"></div>
     </div>
-  </footer>
-</body>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="address">
+          <p>
+            <strong>SmartTODO inc.</strong>
+          </p>
+          <p>
+            1600 Pennsylvania Ave NW,<br>
+            Washington, DC 20500, United States
+          </p>
+          <p>
+            <a href="mailto:info@smarttodo.com">info@smarttodo.com</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
