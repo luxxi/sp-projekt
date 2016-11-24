@@ -1,0 +1,57 @@
+<template>
+  <link href="css/style.css" rel="stylesheet"/>
+
+  <div class="form-group">
+    <div>
+      <input type="text" id="location" />
+    </div>
+    <div>
+      <a href="#" id="getLocation">Get Location</a>
+    </div>
+  </div>
+</template>
+
+<script>
+(function(window, document, undefined) {
+  var thatDoc = document;
+  var thisDoc = (thatDoc._currentScript || thatDoc.currentScript).ownerDocument;
+  var template = thisDoc.querySelector('template').content;
+
+  var GetLocationProto = Object.create(HTMLElement.prototype);
+  GetLocationProto.locationPlaceholder = '';
+  GetLocationProto.createdCallback = function() {
+    var shadowRoot = this.createShadowRoot();
+    var clone = thatDoc.importNode(template, true);
+    shadowRoot.appendChild(clone);
+    var locationEl = shadowRoot.querySelector('#location')
+    this.location = locationEl;
+    if (this.hasAttribute('location-placeholder')) {
+      var locationPlaceholder = this.getAttribute('location-placeholder');
+      this.setLocationPlaceholder(locationPlaceholder);
+    } else {
+      this.setLocationPlaceholder(this.locationPlaceholder);
+    }
+
+    shadowRoot.querySelector('#getLocation').addEventListener('click', function (e) {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          locationEl.value = position.coords.latitude + " " + position.coords.longitude;
+        });
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    });
+  };
+  GetLocationProto.attributeChangedCallback = function(attr, oldVal, newVal) {
+    if (attr === 'location-placeholder') {
+      this.setLocationPlaceholder(newVal);
+    }
+  };
+  GetLocationProto.setLocationPlaceholder = function(val) {
+    this.locationPlaceholder = val;
+    this.location.placeholder = this.locationPlaceholder;
+  };
+
+  window.GetLocation = thatDoc.registerElement('get-location', {prototype: GetLocationProto});
+})(window, document);
+</script>
