@@ -12,7 +12,7 @@
 
         <div class="form-group">
             <%= f.label :password %><br/>
-            <%= f.password_field :password, autocomplete: "off", class: 'form-control', required: true, Error: source does not appear to be markup. %>
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control', required: true, pattern: "[A-Za-z0-9]{8,}$" %>
         </div>
 
         <% if devise_mapping.rememberable? -%>
