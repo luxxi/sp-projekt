@@ -9,7 +9,7 @@
 
         <div class="form-group">
             <%= f.label :name %><br/>
-            <%= f.name_field :name, autofocus: true, class: 'form-control', required: true %>
+            <%= f.text_field :name, autofocus: true, class: 'form-control', required: true %>
         </div>
 
         <div class="form-group">
@@ -35,10 +35,5 @@
             <%= f.submit "Sign up", class: 'btn rounded shadowed-text red-bg' %>
         </div>
         <% end %>
-
-        <div class="actions">
-            <%= render "devise/shared/links" %>
-        </div>
-
     </div>
 </div>
