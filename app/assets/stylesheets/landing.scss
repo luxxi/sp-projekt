@@ -1,0 +1,90 @@
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  p {
+    padding-top: px-to-rem(20);
+    max-width: px-to-rem(600);
+  }
+}
+
+.features {
+  margin-top: px-to-rem(40);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.features__item {
+  padding: 0 px-to-rem(20);
+  flex-basis: calc(33% - #{px-to-rem(20 * 2)});
+
+  @media screen and (max-width: map-get($grid-breakpoints, sm)) {
+    flex-basis: 100%;
+  }
+}
+
+.comparison {
+  margin-top: px-to-rem(40);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.comparison__item {
+  flex-basis: 33%;
+  padding: px-to-rem(16) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba($blue, 0.9);
+
+  * {
+    color: $white;
+  }
+
+  @media screen and (max-width: map-get($grid-breakpoints, sm)) {
+    flex-basis: 100%;
+    margin-top: px-to-rem(16);
+  }
+}
+
+.comparison__features {
+  padding: px-to-rem(10);
+  margin-left: px-to-rem(-20);
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    padding: px-to-rem(5) 0;
+
+    &:before {
+      font-family: 'FontAwesome';
+      content: '\f00c';
+      margin:0 5px 0 -15px;
+      color: darken($white, 10%);
+    }
+  }
+}
+
+.comparison__cost {
+  margin-top: auto;
+  padding-top: px-to-rem(16);
+  font-weight: bold;
+  font-size: px-to-rem(20);
+}
+
+.cta {
+  margin-top: px-to-rem(60);
+
+  .btn {
+    font-size: px-to-rem(20);
+  }
+}

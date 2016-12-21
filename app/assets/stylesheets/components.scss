@@ -1,0 +1,110 @@
+.btn {
+  padding: px-to-rem(8) px-to-rem(12);
+  display: inline-block;
+  text-decoration: none;
+
+  &.rounded {
+    border-radius: px-to-rem(4);
+  }
+
+  &.shadowed-text {
+    text-shadow: 0 0 px-to-rem(0.25) $gray;
+  }
+
+  &.large {
+    width: px-to-rem(194);
+    padding: px-to-rem(16);
+  }
+}
+
+.jumbotron {
+  min-height: px-to-rem(220);
+  background: $light-blue;
+  padding: px-to-rem(20) 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.tags {
+  margin-left: px-to-rem(10);
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    li {
+      float: left;
+    }
+  }
+}
+
+.tag {
+  background: $light-blue;
+  color: $gray;
+  display: inline-block;
+  height: px-to-rem(26);
+  line-height: px-to-rem(26);
+  padding: 0 px-to-rem(20) 0 px-to-rem(23);
+  margin: 0 px-to-rem(5) 0 0;
+  text-decoration: none;
+}
+
+.tag__active {
+  background-color: $blue;
+  color: $white;
+}
+
+.tasks {
+  margin: px-to-rem(50) px-to-rem(10);
+  table {
+    min-width: px-to-rem(300);
+    tr {
+      &.hidden {
+        display: none;
+      }
+
+      td {
+        border-bottom: solid px-to-rem(1) lighten($gray, 65%);
+        text-align: center;
+        padding: px-to-rem(20) px-to-rem(10) px-to-rem(5) px-to-rem(10);
+        min-width: px-to-rem(15);
+      }
+    }
+  }
+}
+
+// checked "\f046", unchecked "\f096"
+
+.tasks__checkbox {
+  display: none;
+
+  + label {
+    cursor: pointer;
+  }
+
+  + label:before {
+    font-family: 'FontAwesome';
+    content: '\f096';
+  }
+
+  &:checked + label:before {
+    content: '\f046';
+  }
+}
+
+.hide {
+  @media all and (max-width: map-get($grid-breakpoints, sm)) {
+    display:none;
+    width:0;
+    height:0;
+    opacity:0;
+    visibility: collapse;
+  }
+}
+
+.tasks__name {
+  cursor: pointer;
+}

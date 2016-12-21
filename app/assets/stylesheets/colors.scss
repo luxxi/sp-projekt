@@ -1,0 +1,53 @@
+$red: #e85a71;
+$light-blue: #d8e9ef;
+$blue: #4ea1d3;
+$gray: #454552;
+$white: #fff;
+
+* {
+  color: $gray;
+}
+
+a {
+  color: $blue;
+}
+
+.red {
+  color: $red;
+}
+
+.light-blue {
+  color: $light-blue;
+}
+
+.blue {
+  color: $blue;
+}
+
+.gray {
+  color: $gray;
+}
+
+.white {
+  color: $white;
+}
+
+.red-bg {
+  background: $red;
+}
+
+.light-blue-bg {
+  background: $light-blue;
+}
+
+.blue-bg {
+  background: $blue;
+}
+
+.gray-bg {
+  background: $gray;
+}
+
+.white-bg {
+  color: $white;
+}

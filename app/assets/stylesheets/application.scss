@@ -1,0 +1,59 @@
+@function px-to-rem($number) {
+  @return ($number) / 16 + rem;
+}
+
+$header-height-px: 70;
+$footer-margin-top-px: 40;
+$footer-padding-px: 20;
+$footer-height-px: 120;
+
+@import "normalize";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "colors";
+@import "grid";
+@import "components";
+@import "forms";
+@import "header";
+@import "footer";
+
+@import "landing";
+
+html,
+body {
+  min-height: 100%;
+}
+
+.content-wrapper {
+  min-height: calc(100vh - #{px-to-rem($header-height-px + $footer-margin-top-px + $footer-padding-px * 2 + $footer-height-px)});
+}
+
+.content {
+  margin-top: px-to-rem(30);
+}
+
+.about {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+
+  img {
+    width: px-to-rem(100);
+    height: px-to-rem(100);
+  }
+
+  p {
+    text-align: justify;
+    padding: 0 px-to-rem(30);
+    margin: 0;
+  }
+}
+
+.video {
+  margin-top: px-to-rem(30);
+}
+
+.clear {
+  height: px-to-rem(30);
+}

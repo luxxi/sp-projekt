@@ -1,0 +1,30 @@
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 544px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px
+);
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  @media screen and (min-width: map-get($grid-breakpoints, md)) {
+    width: px-to-rem(720);
+  }
+
+  @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+    width: px-to-rem(940);
+  }
+
+  @media screen and (min-width: map-get($grid-breakpoints, xl)) {
+    width: px-to-rem(1140);
+  }
+}

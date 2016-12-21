@@ -1,0 +1,10 @@
+.footer {
+  margin-top: px-to-rem(0);
+  height: px-to-rem($footer-height-px);
+  padding: px-to-rem($footer-padding-px);
+  background: $gray;
+
+  * {
+    color: $white;
+  }
+}

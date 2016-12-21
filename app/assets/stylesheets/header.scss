@@ -1,0 +1,96 @@
+$mobile-breakpoint: map-get($grid-breakpoints, sm);
+$mobile-breakpoint: px-to-rem(640);
+$logo-size: 60%;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: px-to-rem($header-height-px);
+
+  .nav-trigger {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    display: none;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  label[for="nav-trigger"] {
+    position: absolute;
+    right: px-to-rem(15);
+    top: px-to-rem(15);
+    z-index: 2;
+    height: px-to-rem(30);
+    width: px-to-rem(30);
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect style='fill:#{$gray}' width='30' height='6'/><rect style='fill:#{$gray}' y='24' width='30' height='6'/><rect style='fill:#{$gray}' y='12' width='30' height='6'/></svg>");
+    background-size: contain;
+    display: none;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      display: block;
+    }
+  }
+
+  .nav-trigger:checked + .header__items {
+    display: block;
+  }
+}
+
+.header__logo {
+  flex-basis: $logo-size;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    flex-basis: initial;
+  }
+}
+
+.header__logo__image {
+  width: px-to-rem(50);
+  height: px-to-rem(50);
+}
+
+.header__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 100% - $logo-size;
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    display: none;
+    box-shadow: 0 px-to-rem(1) px-to-rem(2) rgba($gray, 0.5);
+  }
+}
+
+.header__item {
+  font-size: px-to-rem(20);
+
+  a {
+    color: $gray !important;
+    text-decoration: none;
+  }
+
+  a.btn {
+    color: $white !important;
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding: px-to-rem(8) px-to-rem(20);
+    // background: lighten($gray, 60%);
+    width: calc(100vw - #{px-to-rem(20 * 2)});
+
+    &:last-child {
+      padding-bottom: px-to-rem(16);
+    }
+  }
+}
