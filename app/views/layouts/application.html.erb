@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SP</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+    <title>smartTODO</title>
     <%= csrf_meta_tags %>
 
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="header container">
+      <div class="header__logo">
+        <%= image_tag('logo', class: 'header__logo__image') %>
+        <h2 class="header__logo__name">
+          Smart<span class="red">TODO</span>
+        </h2>
+      </div>
+      <label for="nav-trigger"></label>
+      <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+
+      <div class="header__items">
+        <div class="header__item">
+          <%= link_to 'About', about_path %>
+        </div>
+        <div class="header__item">
+          <a href="login.html">Login</a>
+        </div>
+        <div class="header__item">
+          <a class="btn rounded shadowed-text red-bg" href="signup.html">Sign Up</a>
+        </div>
+      </div>
+    </header>
     <%= yield %>
+    <footer class="footer">
+      <div class="container">
+        <div class="address">
+          <p>
+            <strong>SmartTODO inc.</strong>
+          </p>
+          <p>
+            1600 Pennsylvania Ave NW,<br>
+            Washington, DC 20500, United States
+          </p>
+          <p>
+            <a href="mailto:info@smarttodo.com">info@smarttodo.com</a>
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
