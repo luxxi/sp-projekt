@@ -35,6 +35,11 @@
                 </div>
             </div>
         </header>
+          <div class="content container">
+            <% flash.each do |key, value| %>
+              <%= content_tag :div, value, class: "flash #{key}" %>
+            <% end %>
+          </div>
         <%= yield %>
         <footer class="footer">
             <div class="container">

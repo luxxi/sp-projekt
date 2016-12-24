@@ -17,46 +17,24 @@
           <th>due</th>
           <th></th>
         </tr>
-        <tr>
-          <td>
-            <input class="tasks__checkbox" type="checkbox" id="checkbox1">
-            <label for="checkbox1"></label>
-          </td>
-          <td class="tasks__name">task1</td>
-          <td><i class="fa fa-exclamation"></i></td>
-          <td class="hide">
-            <a href="#work" class="tag">Work</a>
-            <a href="#school" class="tag">School</a>
-          </td>
-          <td><i class="fa fa-clock-o"></i> 25 May</td>
-          <td><a href="new.html"><i class="fa fa-pencil"></i></a></td>
-        </tr>
-        <tr>
-          <td>
-            <input class="tasks__checkbox" type="checkbox" id="checkbox2">
-            <label for="checkbox2"></label>
-          </td>
-          <td class="tasks__name">task2</td>
-          <td><i class="fa fa-exclamation"></i></td>
-          <td class="hide">
-            <a href="#work" class="tag">Work</a>
-          </td>
-          <td><i class="fa fa-clock-o"></i> 12 Jul</td>
-          <td><a href="new.html"><i class="fa fa-pencil"></i></a></td>
-        </tr>
-        <tr>
-          <td>
-            <input class="tasks__checkbox" type="checkbox" id="checkbox3">
-            <label for="checkbox3"></label>
-          </td>
-          <td class="tasks__name">task3</td>
-          <td></td>
-          <td class="hide">
-            <a href="#school" class="tag">School</a>
-          </td>
-          <td><i class="fa fa-clock-o"></i> 20 Feb</td>
-          <td><a href="new.html"><i class="fa fa-pencil"></i></a></td>
-        </tr>
+        <% @tasks.each do |task| %>
+          <tr>
+            <td>
+              <input class="tasks__checkbox" type="checkbox" id="checkbox1">
+              <label for="checkbox1"></label>
+            </td>
+            <td class="tasks__name"><%= task.name %></td>
+            <td>
+              <%= '<i class="fa fa-exclamation"></i>'.html_safe if task.is_priority? %>
+            </td>
+            <td class="hide">
+              <a href="#work" class="tag">Work</a>
+              <a href="#school" class="tag">School</a>
+            </td>
+            <td><i class="fa fa-clock-o"></i> <%= task.due.strftime("%d %b") %></td>
+            <td><%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_task_path(task) %></td>
+          </tr>
+        <% end %>
       </table>
     </div>
     <div class="actions">

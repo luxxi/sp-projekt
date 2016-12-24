@@ -1,4 +1,16 @@
-<%= form_for @task do |f| %>
+<%= form_for(task) do |f| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="form-group">
     <div>
       <label for="task">Task</label>
@@ -8,59 +20,34 @@
     </div>
   </div>
 
-<% end %> %>
-<form action="tasks.html" method="get">
-  <div class="form-group">
-    <div>
-      <label for="task">Task</label>
-    </div>
-    <div>
-      <input type="text" id="task" required />
-    </div>
-  </div>
   <div class="form-group">
     <div>
       <label for="priority">Priority</label>
     </div>
     <div>
-      <input type="range" id="priority" />
+      <%= f.range_field :priority, min: 0, max: 100, class: 'form-control' %>
     </div>
   </div>
-  <div class="form-group">
-    <div>
-      <label for="difficulty">Difficulty</label>
-    </div>
-    <div>
-      <input type="range" id="difficulty" />
-    </div>
-  </div>
-  <div class="form-group">
-    <div>
-      <label for="tags">Tags</label>
-    </div>
-    <div>
-      <input type="text" id="tags" />
-    </div>
-  </div>
+
   <div class="form-group">
     <div>
       <label for="due">Due</label>
     </div>
     <div>
-      <input type="date" id="due" />
+      <%= f.date_field :due, required: true, class: 'form-control' %>
     </div>
   </div>
+
   <div class="form-group">
     <div>
       <label for="description">Description</label>
     </div>
     <div>
-      <textarea rows="4" cols="20" id="description">
-      </textarea>
+      <textarea rows="4" cols="20" id="description"></textarea>
     </div>
   </div>
-  <get-location location-placeholder="Enter location..."></get-location>
+
   <div class="actions">
-    <input type="submit" class="btn rounded shadowed-text red-bg" value="Create">
+    <%= f.submit class: 'btn rounded shadowed-text red-bg' %>
   </div>
-</form>
+<% end %>
