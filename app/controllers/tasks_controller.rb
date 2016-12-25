@@ -1,4 +1,7 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!
+  layout 'app'
+
   def index
     @tasks = Task.order(due: :asc, priority: :desc)
   end

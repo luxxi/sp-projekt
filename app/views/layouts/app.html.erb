@@ -24,13 +24,13 @@
 
             <div class="header__items">
                 <div class="header__item">
-                    <%= link_to 'About', about_path %>
+                    <%= link_to 'Tasks', tasks_path %>
                 </div>
                 <div class="header__item">
-                    <%= link_to 'Login', new_user_session_path %>
+                    <%= link_to 'Graphs', tasks_path %>
                 </div>
                 <div class="header__item">
-                    <%= link_to 'Sign Up', new_user_registration_path, class: 'btn rounded shadowed-text red-bg' %>
+                    <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn rounded shadowed-text red-bg' %>
                 </div>
             </div>
         </header>
