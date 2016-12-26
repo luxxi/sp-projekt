@@ -20,8 +20,8 @@
         <% @tasks.each do |task| %>
           <tr>
             <td>
-              <input class="tasks__checkbox" type="checkbox" id="checkbox1">
-              <label for="checkbox1"></label>
+              <%= check_box_tag 'done', task.id, task.done, class: 'tasks__checkbox', data: { id: task.id } %>
+              <label for="checkbox1" class="tasks__checkbox__label"></label>
             </td>
             <td class="tasks__name"><%= task.name %></td>
             <td>
