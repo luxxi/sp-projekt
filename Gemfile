@@ -60,3 +60,5 @@ gem 'acts-as-taggable-on'
 gem 'validates_timeliness'
 
 gem 'redis'
+
+gem 'rails_12factor', group: :production
