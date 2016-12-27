@@ -56,3 +56,4 @@ gem 'devise'
 gem 'font-awesome-sass'
 
 gem 'acts-as-taggable-on'
+gem 'validates_timeliness'
