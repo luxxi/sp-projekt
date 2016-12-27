@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   devise_for :users
   resources :tasks, only: ['index', 'new', 'create', 'edit', 'update']
+  get 'graphs' => 'tasks#graphs'
   get 'tasks/tags' => 'tasks#tags'
   mount ActionCable.server => '/cable'
 end

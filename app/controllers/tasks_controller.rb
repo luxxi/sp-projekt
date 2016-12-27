@@ -33,6 +33,13 @@ class TasksController < ApplicationController
     end
   end
 
+  def graphs
+    group = current_user.tasks.group_by {|t| t.due.month }
+    count = group.each {|k,v| group[k] = v.size }
+    months = (1..12).to_a.map {|e| [e, 0]}.to_h
+    @num_tasks_by_months = months.merge!(count).values
+  end
+
   def tags
     tags = ActsAsTaggableOn::Tag.all.pluck(:name)
     tags.map! {|tag| "#"+tag }
