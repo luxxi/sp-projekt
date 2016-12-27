@@ -13,7 +13,7 @@ $(tasksIndexSelector).ready(function () {
   // var customTags = ['#work', '#school'];
   var customTags = [];
   $.ajax({
-    url: "http://localhost:3000/tasks/tags",
+    url: "/tasks/tags",
   }).done(function(data) {
     customTags = data;
     customTags.forEach(function (tag) {
