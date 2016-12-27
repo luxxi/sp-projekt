@@ -1,8 +1,10 @@
 class Task < ApplicationRecord
   acts_as_taggable
 
-  # TODO validation!
-
+  validates :name, presence: true
+  validates :due, presence: true
+  validates_date :due
+  validates :tag_list, presence: true
 
   def is_priority?
     self.priority > 50
