@@ -3,8 +3,8 @@ class TasksController < ApplicationController
   layout 'app'
 
   def index
-    @tasks = Task.order(due: :asc, priority: :desc)
-    @tags = ActsAsTaggableOn::Tag.all
+    @tasks = current_user.tasks.order(due: :asc, priority: :desc)
+    @tags = @tasks.map(&:tag_list).flatten
   end
 
   def new
@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.new(task_params)
     if @task.save
       redirect_to tasks_path, notice: 'Task was successfully created.'
     else
