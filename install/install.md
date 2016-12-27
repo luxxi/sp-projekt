@@ -20,6 +20,29 @@ Ko so odvisnosti namescene, lahko nadaljujemo z vzpostavitvijo DB.
 
 Po tem, ko smo namestili in vzpostavili DB lahko pozenemo aplikacijo, to storimo z ukazom rails s.
 
+### Heroku
+
+Pretočimo projekt iz `https://github.com/luxxi/sp-projekt`
+
+Se prepričamo, da v `Gemfile` obstaja `gem 'pg'`
+
+Pred objavo aplikacije moramo imeti nameščene vse odvisnosti, to lahko preverimo s `bundle`.
+
+Potrebno je imeti nameščen [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+
+Zaženemo `heroku login`
+
+Ustvarimo novo heroku aplikacijo `heroku create`
+
+Objavimo aplikacijo `git push heroku master`
+
+Aplikacija uporablja ActionCable, ki potrebuje za medpolnjenje potrebuje Redis. Vključimo ga s  `heroku addons:add redistogo`
+
+Url redis strežnika pridobimo s `heroku config | grep REDISTOGO_URL` in ga skopiramo v `config/cable.yml` v sekcijo `production`.
+
+Poženemo `heroku run rake db:migrate` za ustvarjanje tabel v podatkovni bazi.
+
+### Linux
 Za zagon v produkcijskem okolju je potrebno prej nastaviti unicorn in nginx.
 
 ##### Unicorn setup (linux only)
