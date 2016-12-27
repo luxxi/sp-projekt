@@ -2,9 +2,10 @@
   <div class="content container">
     <div class="tags">
       <ul>
-        <li><a href="#all" class="tags__tag tag tag__active">All</a></li>
-        <li><a href="#work" class="tags__tag tag">Work</a></li>
-        <li><a href="#school" class="tags__tag tag">School</a></li>
+        <li><a href="#all" class="tags__tag tag">All</a></li>
+        <% @tags.each do |tag| %>
+          <li><%= link_to tag, "##{tag}", class: 'tags__tag tag' %></li>
+        <% end %>
       </ul>
     </div>
     <div class="tasks">
@@ -20,16 +21,17 @@
         <% @tasks.each do |task| %>
           <tr>
             <td>
-              <%= check_box_tag 'done', task.id, task.done, class: 'tasks__checkbox', data: { id: task.id } %>
-              <label for="checkbox1" class="tasks__checkbox__label"></label>
+              <%= check_box_tag 'done', task.id, task.done, id: "checkbox#{task.id}", class: 'tasks__checkbox', data: { id: task.id } %>
+              <label for="checkbox<%= task.id %>" class="tasks__checkbox__label"></label>
             </td>
             <td class="tasks__name"><%= task.name %></td>
             <td>
               <%= '<i class="fa fa-exclamation"></i>'.html_safe if task.is_priority? %>
             </td>
             <td class="hide">
-              <a href="#work" class="tag">Work</a>
-              <a href="#school" class="tag">School</a>
+              <% task.tag_list.each do |tag| %>
+                <%= link_to tag, "##{tag}", class: 'tag' %>
+              <% end %>
             </td>
             <td><i class="fa fa-clock-o"></i> <%= task.due.strftime("%d %b") %></td>
             <td><%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_task_path(task) %></td>
